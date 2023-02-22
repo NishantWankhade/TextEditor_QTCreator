@@ -134,12 +134,16 @@ void MainWindow::on_actionBold_triggered()
 
 void MainWindow::on_actionSubScript_triggered()
 {
-    ui->textEdit->setVerticalAlignment(QTextCharFormat::AlignSubScript);
+    QTextCharFormat format;
+    format.setVerticalAlignment(QTextCharFormat::AlignSubScript);
+    ui->textEdit->textCursor().mergeCharFormat(format);
 }
 
 
 void MainWindow::on_actionSuperScript_triggered()
 {
-
+    QTextCharFormat format;
+    format.setVerticalAlignment(QTextCharFormat::AlignSuperScript);
+    ui->textEdit->textCursor().mergeCharFormat(format);
 }
 
