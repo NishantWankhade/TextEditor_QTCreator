@@ -130,20 +130,45 @@ void MainWindow::on_actionBold_triggered()
     }
 }
 
-
-
 void MainWindow::on_actionSubScript_triggered()
 {
-    QTextCharFormat format;
-    format.setVerticalAlignment(QTextCharFormat::AlignSubScript);
-    ui->textEdit->textCursor().mergeCharFormat(format);
+    //Added scripting to a local variable
+    //And then setting that formatting with the current format
+    auto isSubscript = ui->textEdit->currentCharFormat();
+
+    // Will check whether the current format is subscript
+    if(isSubscript.verticalAlignment() != QTextCharFormat::AlignSubScript){
+        // no
+        // turn current format to subscript
+        QTextCharFormat format;
+        format.setVerticalAlignment(QTextCharFormat::AlignSubScript);
+        ui->textEdit->setCurrentCharFormat(format);
+    }
+    else{
+        // yes
+        // turn current format back to normal
+        QTextCharFormat format;
+        format.setVerticalAlignment(QTextCharFormat::AlignNormal);
+        ui->textEdit->setCurrentCharFormat(format);
+    }
 }
 
 
 void MainWindow::on_actionSuperScript_triggered()
 {
-    QTextCharFormat format;
-    format.setVerticalAlignment(QTextCharFormat::AlignSuperScript);
-    ui->textEdit->textCursor().mergeCharFormat(format);
+    // Similar to subscript
+    // Current format will change
+    auto isSubscript = ui->textEdit->currentCharFormat();
+
+    if(isSubscript.verticalAlignment() != QTextCharFormat::AlignSuperScript){
+        QTextCharFormat format;
+        format.setVerticalAlignment(QTextCharFormat::AlignSuperScript);
+        ui->textEdit->setCurrentCharFormat(format);
+    }
+    else{
+        QTextCharFormat format;
+        format.setVerticalAlignment(QTextCharFormat::AlignNormal);
+        ui->textEdit->setCurrentCharFormat(format);
+    }
 }
 
