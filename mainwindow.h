@@ -37,6 +37,8 @@ private slots:
 
     void on_actionRedo_triggered();
 
+    void on_actionBold_changed();
+
     void on_actionBold_triggered();
 
 private:
