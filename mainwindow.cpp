@@ -17,9 +17,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionNew_triggered()
 {
+    //Giving a file name to empty string
     mFilename = "";
-    ui->textEdit->setPlainText("");
 
+    //Setting the text to empty string
+    ui->textEdit->setPlainText("");
 }
 
 
@@ -27,19 +29,54 @@ void MainWindow::on_actionNew_triggered()
 
 void MainWindow::on_actionOpen_triggered()
 {
+    //Taking input from user via a dialog box and store that file name
+    QString file = QFileDialog::getOpenFileName(this,"Open a file");
 
+    // If that file is given as a input
+    if(!file.isEmpty()){
+
+        QFile sFile(file);
+
+        if(sFile.open(QFile::ReadOnly | QFile::Text)){
+
+            mFilename = file;
+            QTextStream in(&sFile);
+            QString text = in.readAll();
+            sFile.close();
+
+            ui->textEdit->setPlainText(text);
+        }
+    }
 }
 
 
 void MainWindow::on_actionSave_triggered()
 {
+    QFile sFile(mFilename);
+
+    if(sFile.open(QFile::WriteOnly | QFile::Text)){
+
+        QTextStream out(&sFile);
+
+        out << ui->textEdit->toPlainText();
+
+        sFile.flush();
+        sFile.close();
+    }
 
 }
 
 
 void MainWindow::on_actionSave_As_triggered()
 {
+    QString file = QFileDialog::getSaveFileName(this,"Open a file");
 
+    // If that file is given as a input
+    if(!file.isEmpty()){
+
+        mFilename = file;
+        on_actionSave_triggered();
+    }
 }
 
 
@@ -84,22 +121,13 @@ void MainWindow::on_actionBold_triggered()
     if(font != QFont::Bold){
         // Then set the selected text to bold
 
-        QTextCharFormat format;
-        format.setFontWeight(QFont::Bold);
-        ui->textEdit->textCursor().mergeCharFormat(format);
+        ui->textEdit->setFontWeight(QFont::Bold);
     }
     // If it is equal
     else{
         // If it is equal then set text to normal {UnBold feature}
-        QTextCharFormat format;
-        format.setFontWeight(QFont::Normal);
-        ui->textEdit->textCursor().mergeCharFormat(format);
+        ui->textEdit->setFontWeight(QFont::Normal);
     }
 }
 
-
-void MainWindow::on_actionBold_changed()
-{
-
-}
 

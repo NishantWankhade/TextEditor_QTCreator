@@ -4,7 +4,8 @@
 #include <QMainWindow>
 #include <QtCore>
 #include <QtGui>
-
+#include <QFileDialog>
+#include <QFile>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -37,7 +38,6 @@ private slots:
 
     void on_actionRedo_triggered();
 
-    void on_actionBold_changed();
 
     void on_actionBold_triggered();
 
