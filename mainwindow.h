@@ -41,6 +41,10 @@ private slots:
 
     void on_actionBold_triggered();
 
+    void on_actionSubScript_triggered();
+
+    void on_actionSuperScript_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString mFilename;

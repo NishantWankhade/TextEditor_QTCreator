@@ -55,21 +55,24 @@
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
    </widget>
-   <widget class="QMenu" name="menuAbout_ME">
-    <property name="title">
-     <string>About ME</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="menuTextEdit">
     <property name="title">
      <string>Format</string>
     </property>
     <addaction name="actionBold"/>
+    <addaction name="actionSubScript"/>
+    <addaction name="actionSuperScript"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout_Me">
+    <property name="title">
+     <string>About Me</string>
+    </property>
+    <addaction name="actionMy_Resume"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuTextEdit"/>
-   <addaction name="menuAbout_ME"/>
+   <addaction name="menuAbout_Me"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -96,11 +99,15 @@
    <addaction name="actionRedo"/>
    <addaction name="separator"/>
    <addaction name="actionBold"/>
+   <addaction name="actionSubScript"/>
+   <addaction name="actionSuperScript"/>
+   <addaction name="separator"/>
+   <addaction name="actionMy_Resume"/>
   </widget>
   <action name="actionNew">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/icons8-new-file-50.png</normaloff>:/icons/icons8-new-file-50.png</iconset>
+     <normaloff>:/icons/icons/icons8-new-file-50.png</normaloff>:/icons/icons/icons8-new-file-50.png</iconset>
    </property>
    <property name="text">
     <string>New</string>
@@ -109,7 +116,7 @@
   <action name="actionOpen">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/icons8-opened-folder-50.png</normaloff>:/icons/icons8-opened-folder-50.png</iconset>
+     <normaloff>:/icons/icons/icons8-opened-folder-50.png</normaloff>:/icons/icons/icons8-opened-folder-50.png</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -118,7 +125,7 @@
   <action name="actionSave">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/icons8-save-50.png</normaloff>:/icons/icons8-save-50.png</iconset>
+     <normaloff>:/icons/icons/icons8-save-50.png</normaloff>:/icons/icons/icons8-save-50.png</iconset>
    </property>
    <property name="text">
     <string>Save</string>
@@ -127,7 +134,7 @@
   <action name="actionSave_As">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/icons8-save-as-50.png</normaloff>:/icons/icons8-save-as-50.png</iconset>
+     <normaloff>:/icons/icons/icons8-save-as-50.png</normaloff>:/icons/icons/icons8-save-as-50.png</iconset>
    </property>
    <property name="text">
     <string>Save As</string>
@@ -136,7 +143,7 @@
   <action name="actionCopy">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/icons8-documents-50.png</normaloff>:/icons/icons8-documents-50.png</iconset>
+     <normaloff>:/icons/icons/icons8-documents-50.png</normaloff>:/icons/icons/icons8-documents-50.png</iconset>
    </property>
    <property name="text">
     <string>Copy</string>
@@ -145,7 +152,7 @@
   <action name="actionCut">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/icons8-cut-50.png</normaloff>:/icons/icons8-cut-50.png</iconset>
+     <normaloff>:/icons/icons/icons8-cut-50.png</normaloff>:/icons/icons/icons8-cut-50.png</iconset>
    </property>
    <property name="text">
     <string>Cut</string>
@@ -154,7 +161,7 @@
   <action name="actionPaste">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/icons8-paste-50.png</normaloff>:/icons/icons8-paste-50.png</iconset>
+     <normaloff>:/icons/icons/icons8-paste-50.png</normaloff>:/icons/icons/icons8-paste-50.png</iconset>
    </property>
    <property name="text">
     <string>Paste</string>
@@ -163,7 +170,7 @@
   <action name="actionUndo">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/icons8-undo-50.png</normaloff>:/icons/icons8-undo-50.png</iconset>
+     <normaloff>:/icons/icons/icons8-undo-50.png</normaloff>:/icons/icons/icons8-undo-50.png</iconset>
    </property>
    <property name="text">
     <string>Undo</string>
@@ -172,7 +179,7 @@
   <action name="actionRedo">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/icons8-redo-50.png</normaloff>:/icons/icons8-redo-50.png</iconset>
+     <normaloff>:/icons/icons/icons8-redo-50.png</normaloff>:/icons/icons/icons8-redo-50.png</iconset>
    </property>
    <property name="text">
     <string>Redo</string>
@@ -181,10 +188,37 @@
   <action name="actionBold">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/icons8-bold-50.png</normaloff>:/icons/icons8-bold-50.png</iconset>
+     <normaloff>:/icons/icons/icons8-bold-50.png</normaloff>:/icons/icons/icons8-bold-50.png</iconset>
    </property>
    <property name="text">
     <string>Bold</string>
+   </property>
+  </action>
+  <action name="actionMy_Resume">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/icons8-more-info-50.png</normaloff>:/icons/icons/icons8-more-info-50.png</iconset>
+   </property>
+   <property name="text">
+    <string>My Resume</string>
+   </property>
+  </action>
+  <action name="actionSubScript">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/icons8-subscript-50.png</normaloff>:/icons/icons/icons8-subscript-50.png</iconset>
+   </property>
+   <property name="text">
+    <string>SubScript</string>
+   </property>
+  </action>
+  <action name="actionSuperScript">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/icons8-superscript-50.png</normaloff>:/icons/icons/icons8-superscript-50.png</iconset>
+   </property>
+   <property name="text">
+    <string>SuperScript</string>
    </property>
   </action>
  </widget>

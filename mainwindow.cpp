@@ -131,3 +131,15 @@ void MainWindow::on_actionBold_triggered()
 }
 
 
+
+void MainWindow::on_actionSubScript_triggered()
+{
+    ui->textEdit->setVerticalAlignment(QTextCharFormat::AlignSubScript);
+}
+
+
+void MainWindow::on_actionSuperScript_triggered()
+{
+
+}
+
